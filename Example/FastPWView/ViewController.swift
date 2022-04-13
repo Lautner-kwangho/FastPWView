@@ -11,7 +11,7 @@ import FastPWView
 
 class ViewController: UIViewController {
     
-    let pwView = FastView(.basic)
+    let pwView = FastView(.expansion)
     
     override func viewDidLoad() {
         super.viewDidLoad()

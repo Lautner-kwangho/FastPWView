@@ -9,10 +9,9 @@ import UIKit
 
 @available(iOS 13.0, *)
 extension FastView: UITextFieldDelegate {
-    private func textFieldDidChangeSelection(_ textField: UITextField) {
-        guard let text = textField.text else { return }
-        
-        print(text)
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let newLength = (textField.text?.count)! + string.count - range.length
+        let type = self.pwCountType == .basic ? 4 : 6
+        return !(newLength > type)
     }
-    
 }
