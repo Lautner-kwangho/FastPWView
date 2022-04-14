@@ -17,9 +17,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .gray
-        
-        FastView.sayHello(with: "철수")
-        
         testMaking()
     }
     
@@ -30,6 +27,19 @@ class ViewController: UIViewController {
         pwView.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
 
         pwView.spacing(10)
+//        pwView.pwTintColor(.blue)
+        DispatchQueue.global().asyncAfter(deadline: .now() + 5) {
+            print(self.pwView.pwFlag)
+            print(self.pwView.pwNumber)
+        }
+        DispatchQueue.global().asyncAfter(deadline: .now() + 7) {
+            print(self.pwView.pwFlag)
+            print(self.pwView.pwNumber)
+        }
+        DispatchQueue.global().asyncAfter(deadline: .now() + 9) {
+            print(self.pwView.pwFlag)
+            print(self.pwView.pwNumber)
+        }
     }
 
     override func didReceiveMemoryWarning() {

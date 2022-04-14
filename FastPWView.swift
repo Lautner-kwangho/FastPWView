@@ -25,9 +25,15 @@ public class FastView: UIView, UIGestureRecognizerDelegate {
         return stack
     }()
     private lazy var tap = UIGestureRecognizer()
+    private var pwBeforeUIImage: UIImage = UIImage(systemName: "circle")!
+    private var pwFillUIImage: UIImage = UIImage(systemName: "circle.fill")!
+    
+    /// 비밀번호 입력 완료시 true ( Returns true when the password is complete )
+    public var pwFlag: Bool?
+    /// 입력한 비밀번호 ( Input Password )
+    public var pwNumber: String?
+    /// 4, 6자리 비밀번호 타입 ( Password Type )
     public var pwCountType: PasswordCount?
-    public var pwBeforeFillImage: UIImage = UIImage(systemName: "circle.fill")!
-    public var pwFillImage: UIImage = UIImage(systemName: "circle")!
     
     public convenience init(_ pwLimitNumber: PasswordCount) {
         self.init()
@@ -73,7 +79,10 @@ public class FastView: UIView, UIGestureRecognizerDelegate {
     }
     private func pwConstraints() {
         let imageSet = [onePW, twoPW, threePW, fourPW, fivePW, sixPW]
-        imageSet.forEach { pwView.addArrangedSubview($0) }
+        imageSet.forEach {
+            pwView.addArrangedSubview($0)
+            $0.tintColor = .orange
+        }
         pwView.translatesAutoresizingMaskIntoConstraints = false
         pwView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         pwView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
@@ -91,12 +100,16 @@ public class FastView: UIView, UIGestureRecognizerDelegate {
     }
 
     @objc private func textFieldDidChange(_ textField: UITextField) {
-        print("입력된 수: ", textField.text)
         guard let text = textField.text else { return }
+        self.pwNumber = textField.text
+        if pwCountType == .basic && text.count == 4 || pwCountType == .expansion && text.count == 6 {
+            self.pwFlag = true
+        } else {
+            self.pwFlag = false
+        }
         switch text.count {
         case 0:
-            // 여기 부분 생각해보기!
-            self.removeImageSet(-1)
+            self.onePW.image = self.pwBeforeUIImage
         case 1:
             self.removeImageSet(0)
             self.appendImageSet(0)
@@ -121,17 +134,15 @@ public class FastView: UIView, UIGestureRecognizerDelegate {
     
     private func appendImageSet(_ number: Int) {
         let imageSet = [onePW, twoPW, threePW, fourPW, fivePW, sixPW]
-        
         for checkImage in imageSet[0 ... number] {
-            checkImage.image = self.pwBeforeFillImage
+            checkImage.image = self.pwFillUIImage
         }
     }
     
     private func removeImageSet(_ number: Int) {
         let imageSet = [onePW, twoPW, threePW, fourPW, fivePW, sixPW]
-        
         for checkImage in imageSet[number ... 5] {
-            checkImage.image = self.pwFillImage
+            checkImage.image = self.pwBeforeUIImage
         }
     }
     
@@ -151,7 +162,7 @@ public class FastView: UIView, UIGestureRecognizerDelegate {
      Default system Image Name " circle "
      */
     public func beforeImage(_ image: UIImage) {
-        self.pwBeforeFillImage = image
+        self.pwBeforeUIImage = image
         let imageSet = [onePW, twoPW, threePW, fourPW, fivePW, sixPW]
         imageSet.forEach { $0.image = image }
     }
@@ -160,13 +171,13 @@ public class FastView: UIView, UIGestureRecognizerDelegate {
      Default system Image Name " circle.fill "
      */
     public func afterImage(_ image: UIImage) {
-        self.pwFillImage = image
+        self.pwFillUIImage = image
         let imageSet = [onePW, twoPW, threePW, fourPW, fivePW, sixPW]
         imageSet.forEach { $0.image = image }
     }
     /**
-     입력 전 비밀번호 Tint Color ( Tint Color before entering Password )
-     Default Color " Black  "
+     비밀번호 Tint Color ( Password Tint Color )
+     Default Color " Orange  "
      */
     public func pwTintColor(_ color: UIColor) {
         let imageSet = [onePW, twoPW, threePW, fourPW, fivePW, sixPW]
