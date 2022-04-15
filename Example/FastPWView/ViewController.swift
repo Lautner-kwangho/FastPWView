@@ -15,8 +15,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .gray
         testMaking()
     }
     
@@ -27,7 +25,6 @@ class ViewController: UIViewController {
         pwView.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
 
         pwView.spacing(10)
-//        pwView.pwTintColor(.blue)
         DispatchQueue.global().asyncAfter(deadline: .now() + 5) {
             print(self.pwView.pwFlag)
             print(self.pwView.pwNumber)
