@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.summary          = '간편한 PIN 번호 뷰(Easy PIN number View)'
   s.description      = '앱 PIN번호 기능을 간편하게 사용할 수 있는 PASSWORD View입니다. (This is the PASSWORD View that allows you to easily use the app PIN number function.) '
 
-  s.homepage         = 'https://github.com/wooree2716@khcu.ac.kr/FastPWView'
+  s.homepage         = 'https://github.com/Lautner-kwangho/FastPWView'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'kwangho' => 'wooree2716@khcu.ac.kr' }
