@@ -35,7 +35,7 @@ pod 'FastPWView'
 end
 
 ## Author
-광호 (kwangho), [E-mail]wooree2716@gmail.com
+광호 (kwangho), [E-mail](wooree2716@gmail.com)
 
 ## License
 FastPWView is available under the MIT license. See the LICENSE file for more info.
