@@ -60,10 +60,6 @@ public class FastView: UIView, UIGestureRecognizerDelegate {
         }
     }
     
-    public static func sayHello(with name: String) {
-        print("\(name)님 안녕하세요~\n 테스트 중입니다")
-    }
-    
     private func textFieldConstraints() {
         pwTextField.translatesAutoresizingMaskIntoConstraints = false
         pwTextField.topAnchor.constraint(equalTo: self.topAnchor).isActive = true

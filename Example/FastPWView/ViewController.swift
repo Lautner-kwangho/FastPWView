@@ -29,19 +29,10 @@ class ViewController: UIViewController {
             print(self.pwView.pwFlag)
             print(self.pwView.pwNumber)
         }
-        DispatchQueue.global().asyncAfter(deadline: .now() + 7) {
-            print(self.pwView.pwFlag)
-            print(self.pwView.pwNumber)
-        }
-        DispatchQueue.global().asyncAfter(deadline: .now() + 9) {
-            print(self.pwView.pwFlag)
-            print(self.pwView.pwNumber)
-        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        print("메모리 경고남")
     }
 
 }
