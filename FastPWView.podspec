@@ -23,14 +23,15 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/Lautner-kwangho/FastPWView'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'kwangho' => 'wooree2716@khcu.ac.kr' }
+  s.author           = { 'Lautner-kwangho
+' => 'wooree2716@khcu.ac.kr' }
   s.source           = { :git => 'https://github.com/Lautner-kwangho/FastPWView.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '13.0'
   s.swift_version = '5.0'
 #  s.source_files = 'FastPWView/**/*.swift'
-#  s.source_files = 'Sources/**/*.swift'
-  s.source_files = 'FastPWView/Classes/**/*'
+#  s.source_files = 'Sources/*.swift'
+  s.source_files = 'Classes/**/*'
   
   # s.resource_bundles = {
   #   'FastPWView' => ['FastPWView/Assets/*.png']
