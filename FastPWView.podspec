@@ -16,7 +16,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FastPWView'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = '간편한 PIN 번호 뷰(Easy PIN number View)'
   s.description      = '앱 PIN번호 기능을 간편하게 사용할 수 있는 PASSWORD View입니다. (This is the PASSWORD View that allows you to easily use the app PIN number function.) '
 
@@ -29,9 +29,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '13.0'
   s.swift_version = '5.0'
-#  s.source_files = 'FastPWView/**/*.swift'
-#  s.source_files = 'Sources/*.swift'
-  s.source_files = 'Classes/**/*'
+  s.source_files = 'FastPWView/Classes/**/*'
   
   # s.resource_bundles = {
   #   'FastPWView' => ['FastPWView/Assets/*.png']
