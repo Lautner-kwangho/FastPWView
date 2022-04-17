@@ -25,11 +25,9 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'kwangho' => 'wooree2716@khcu.ac.kr' }
   s.source           = { :git => 'https://github.com/Lautner-kwangho/FastPWView.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '13.0'
   s.swift_version = '5.0'
-
   s.source_files = 'FastPWView/Classes/**/*'
   
   # s.resource_bundles = {
