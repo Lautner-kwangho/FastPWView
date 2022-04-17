@@ -9,12 +9,11 @@
 
 FastPWView is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
-<br/>(Cocopod을 이용하여 사용할 수 있습니다! 다음과 같이 Podfile을 설정해주세요)
+<br/>(Cocopod을 이용하여 사용할 수 있습니다! 다음과 같이 Podfile을 설정해주세요, 곧 SPM도 업데이트 하도록 하겠습니다!)
 
 ```ruby
 pod 'FastPWView'
 ```
-end
 
 ### Using
 How to use it can be used simply as follows!
@@ -25,7 +24,14 @@ let pwView = FastView(.basic) // or .expansion
 view.addSubView(pwView)
 
 ( set pwView Layout )
+// Property
+// 비밀번호 입력 완료시 true ( Returns true when the password is complete )
+pwView.pwFlag: Bool?
 
+// 입력한 비밀번호 ( Input Password )
+pwView.pwNumber: String?
+
+// Method
 // 비밀번호 사이 여백 설정 ( Sets the spacing between passwords )
 pwView.spacing(CGFloat)
 
@@ -42,7 +48,6 @@ pwView.pwTintColor(_ color: UIColor)
 pwView.background(_ backgroundColor: UIColor)
  
 ```
-end
 
 ## Example
 
@@ -51,7 +56,6 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 let pwView = FastView(.basic)
 view.addSubView(pwView)
 ```
-end
 
 ## Requirements
 Unable to use because error correction is currently in progress; available after correction
@@ -59,7 +63,6 @@ Unable to use because error correction is currently in progress; available after
 ```ruby
 available( iOS 13, *)
 ```
-end
 
 ## Author
 광호 (kwangho), [E-mail](wooree2716@gmail.com)
