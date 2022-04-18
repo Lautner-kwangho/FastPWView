@@ -15,7 +15,14 @@ it, simply add the following line to your Podfile:
 pod 'FastPWView'
 ```
 
-### Using
+```ruby
+// SPM Support 
+https://github.com/Lautner-kwangho/FastPWView.git
+```
+
+
+## Using
+
 How to use it can be used simply as follows!
 <br/>(사용방법은 아래와 같이 심플하게 사용할 수 있습니다!)
 ```ruby
@@ -49,23 +56,37 @@ pwView.background(_ backgroundColor: UIColor)
  
 ```
 
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 ```ruby
+import FastPWView
+
 let pwView = FastView(.basic)
+
 view.addSubView(pwView)
 ```
+- 기본 화면
+** (gif 올릴 예정)
+
+- 활용
+** 배달의 민족( 배민 페이 ) PIN 처럼 커스텀 가능합니다 
 
 ## Requirements
+
 Unable to use because error correction is currently in progress; available after correction
-<br/>(현재 테스트 중)
+<br/>
 ```ruby
 available( iOS 13, *)
 ```
 
+
 ## Author
+
 광호 (kwangho), [E-mail](wooree2716@gmail.com)
 
+
 ## License
+
 FastPWView is available under the MIT license. See the LICENSE file for more info.
